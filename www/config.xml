@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.dermotbohan.ToDoListApp" verionCode="1" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap = "http://phonegap.com/ns/1.0" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>DSA To Do List - Dermot Bohan</name>
+    <description>
+        A To Do List Assignment for Mobile Web Applications Module
+    </description>
+    <author email="dermot.bohan@webelevate.ie" href="">
+        Dermo Bohan
+    </author>
+    <content src="index.html" />
+    <plugin name="cordova-plugin-whitelist" spec="1" />
+    <access origin="*" />
+    
+
+
+    <preference name = "orientation" value = "portrait"/>
+    <!-- icon src="" / -->
+    <!-- icon src="" gap:platform="winphone" gap:role="background" / -->
+
+    <icon gap:platform="android" gap:qualifier="ldpi" src="res/icons/android/icon-36-ldpi.png"/>
+    <icon gap:platform="android" gap:qualifier="mdpi" src="res/icons/android/icon-48-mdpi.png"/>
+    <icon gap:platform="android" gap:qualifier="hdpi" src="res/icons/android/icon-72-hdpi.png"/>
+    <icon gap:platform="android" gap:qualifier="xhdpi" src="res/icons/android/icon-96-xhdpi.png"/>
+    <icon gap:platform="android" gap:qualifier="xxhdpi" src="res/icons/android/icon-144-xxhdpi.png"/>
+    <icon gap:platform="android" gap:qualifier="xxxhdpi" src="res/icons/android/icon-192-xxxhdpi.png"/>
+
+
+    <!-- gap:splash src="splash.png" / -->
+    <!-- gap:splash src="splash/ios/default.png" gap:platform="ios" width="320" height="480" / -->
+
+
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+</widget>

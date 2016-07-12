@@ -1,0 +1,80 @@
+<!--		
+*	Author:	Dermot Bohan	
+*	Assignment:	WE4	Mobile	Web	Applications,	Digital	Skills	Academy	
+*	Date	:	2016/07/06	
+	
+//Code	reuse		
+//
+//		Ref: http://www.w3schools.com/angular/angular_routing.asp 									
+//		Ref: http://v4-alpha.getbootstrap.com/components/buttons/ 									
+//		Ref: http://www.w3schools.com/bootstrap/bootstrap_buttons.asp 								
+//		Ref: https://docs.angularjs.org/guide/controller 											
+//		Ref: https://docs.angularjs.org/guide/filter												
+//		Ref: https://www.kirupa.com/html5/storing_and_retrieving_an_array_from_local_storage.htm 	
+//
+-->	
+
+
+
+	<div id="filteredList" class="col-xs-12 well mainView">
+
+		<div id="viewText" class="col-xs-12 well text-center viewselect">
+
+			VIEWING INCOMPLETE TASKS ONLY
+
+		</div>
+		<div class="col-xs-12 well text-center viewselect">
+
+		Priotity Selected: {{prioritySelect}} || Tag Selected: {{tagSelect}}
+
+		</div>
+
+		<ul>
+		<li ng-repeat="x in toDoItems | toDoFilter:prioritySelect :tagSelect">
+
+
+			<div class="col-xs-12 " ng-show="show({{x.status}})">
+				
+				<div class="col-xs-2 {{x.priority}} text center">
+					
+					<span class="pull-left">{{x.priority}}</span>
+				</div>	
+				
+				
+				<div class="col-xs-8">
+					<button type="button" class="btn btn-info btn-block btn-lg" data-toggle="collapse" data-target="#{{$index}}">
+						{{x.subject}}
+
+					</button>
+				</div>
+
+				<div class="col-xs-2 {{x.tag}} text-center">
+					
+					<span class="pull-right">{{x.tag}}</span>
+				 </div>
+			</div>
+			
+			<!-- Collapsible Section Details -->
+			<div class="col-xs-12 collapse well" id="{{$index}}" ng-show="show({{x.status}})">
+				
+				SUBJECT: {{x.subject}}<br>
+				DETAILS: {{x.details}}<br>
+				<br>
+				<br>
+				<div class="col-xs-2 col-xs-offset-2">PRIORITY: {{x.priority}}</div>
+				<div class="col-xs-2">TAG: {{x.tag}}</div>
+				<div class="col-xs-2">
+					<input type="checkbox" data-ng-model="x.status" ng-click="updateStatus($index)" action="index.html">COMPLETE
+				</div>
+				
+				<div class="col-xs-2">
+					<button type="button" class="btn btn-danger btn-block" ng-click="deleteListItem($index)">DELETE ITEM</button>
+				</div>
+
+			</div>
+
+
+		</li>
+		</ul>
+				
+	</div>

@@ -1,0 +1,85 @@
+<!--		
+*	Author:	Dermot Bohan	
+*	Assignment:	WE4	Mobile	Web	Applications,	Digital	Skills	Academy	
+*	Date	:	2016/07/06	
+	
+//Code	reuse		
+//
+//		Ref: http://www.w3schools.com/angular/angular_routing.asp 									
+//		Ref: http://v4-alpha.getbootstrap.com/components/buttons/ 									
+//		Ref: http://www.w3schools.com/bootstrap/bootstrap_buttons.asp 								
+//		Ref: https://docs.angularjs.org/guide/controller 											
+//		Ref: https://docs.angularjs.org/guide/filter												
+//		Ref: https://www.kirupa.com/html5/storing_and_retrieving_an_array_from_local_storage.htm 	
+//
+-->	
+
+
+<div class="row">
+
+	<div id="newForm"class="col-xs-12 well">	
+
+		<!-- DATA FORM -->
+
+		NEW TO DO ITEM: <br>
+		SUBJECT:<br>
+		<input type="text" data-ng-model="newListItem.subject" placeholder="Enter subject"><br> 
+		<!-- form input bound to {{newListItem.subject}} -->
+		DETAILS:<br>
+		<input type="text" ng-model="newListItem.details" size="100" placeholder="Enter details"><br>
+		<!-- bound to {{newListItem.priority}} -->
+
+		<br>
+		<br>
+
+		<div class="col-xs-6 well">
+		
+			<div class="form-group">
+				
+				<label for="PriorityInput">
+					Priority:
+				</label>
+			
+				<select class="form-control" id="PriorityInput" ng-model="newListItem.priority">
+					<option>low</option>
+					<option>med</option>
+					<option>high</option>
+				</select>
+
+			</div>
+		
+		</div>
+
+		<div class="col-xs-6 well">
+
+			<div class="form-group">
+				
+				<label for="tagInput">
+					Tag:
+				</label>
+			
+				<select class="form-control" id="tagInput" ng-model="newListItem.tag">
+					<option>leisure</option>
+					<option>family</option>
+					<option>work</option>
+				</select>
+				
+			</div>
+
+		</div>
+
+
+		<div class="col-xs-6 well">
+		
+			<a type="button" data-ng-click="toDoListAdd(newListItem.subject,newListItem.details,newListItem.priority,newListItem.tag)" class="btn btn-danger btn-block"  href="#/">SUBMIT NEW TO DO ITEM</a>
+		</div>
+
+		<div class="col-xs-6 well">
+		
+			<a type="button" class="btn btn-warning btn-block" href="#/">CANCEL</a>
+		</div>
+
+
+	</div>
+
+</div>
